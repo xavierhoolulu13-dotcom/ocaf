@@ -1,0 +1,78 @@
+{
+  "name": "Repo Builder & Deployer",
+  "version": "1.0.0",
+  "description": "An agent that generates complete GitHub repositories, including folder structures, code files, documentation, and one-click deployment scripts.",
+  
+  "mission": "Build fully structured, ready-to-deploy GitHub repositories from a simple user prompt.",
+
+  "inputs": {
+    "repo_name": {
+      "type": "text",
+      "placeholder": "Name of the repository",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "placeholder": "Short description of the repo",
+      "required": true
+    },
+    "tech_stack": {
+      "type": "text",
+      "placeholder": "HTML, JS, Python, Node, etc.",
+      "required": false
+    },
+    "features": {
+      "type": "textarea",
+      "placeholder": "List the features you want included",
+      "required": false
+    }
+  },
+
+  "outputs": {
+    "repo_structure": "A complete folder + file scaffold in JSON format.",
+    "file_contents": "Generated code for each file.",
+    "zip_file": "A downloadable ZIP of the full repo.",
+    "deploy_instructions": "One-click GitHub Pages deployment instructions.",
+    "gh_pages_link": "If user provides token, auto-deploy and return live link."
+  },
+
+  "workflows": {
+    "generate_structure": [
+      "Parse user inputs",
+      "Create folder tree",
+      "Create file list",
+      "Return JSON structure"
+    ],
+    "generate_files": [
+      "Generate README.md",
+      "Generate LICENSE",
+      "Generate index.html",
+      "Generate main.js",
+      "Generate style.css",
+      "Generate any additional files based on tech stack"
+    ],
+    "package_repo": [
+      "Bundle all files",
+      "Create ZIP archive",
+      "Return downloadable file"
+    ],
+    "deploy_repo": [
+      "Initialize GitHub Pages structure",
+      "Place build files in /docs or gh-pages branch",
+      "Return live deployment link"
+    ]
+  },
+
+  "ui": {
+    "theme": "premium-dark",
+    "accent_color": "#007AFF",
+    "layout": "mobile-first",
+    "components": [
+      "repo form",
+      "structure preview",
+      "file preview",
+      "zip download button",
+      "deploy button"
+    ]
+  }
+}
