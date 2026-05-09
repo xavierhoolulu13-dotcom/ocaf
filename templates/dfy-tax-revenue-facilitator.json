@@ -1,0 +1,68 @@
+{
+  "name": "Tax Revenue Facilitator",
+  "version": "1.0.0",
+  "description": "A DFY agent that logs income, tracks expenses, categorizes transactions, and generates tax-ready summaries for freelancers, creators, and small businesses.",
+  
+  "mission": "Help users stay tax-ready by automatically organizing revenue, expenses, categories, and summaries with zero friction.",
+  
+  "inputs": {
+    "transaction_type": {
+      "type": "select",
+      "options": ["Income", "Expense"],
+      "required": true
+    },
+    "amount": {
+      "type": "number",
+      "required": true
+    },
+    "source_or_category": {
+      "type": "text",
+      "placeholder": "Client, platform, category, or expense type",
+      "required": true
+    },
+    "notes": {
+      "type": "text",
+      "placeholder": "Optional notes"
+    }
+  },
+
+  "outputs": {
+    "log_entry": "A structured JSON entry containing timestamp, type, amount, category, and notes.",
+    "summary": "Tax-ready summaries grouped by month, quarter, and category.",
+    "export": "Downloadable CSV or JSON file."
+  },
+
+  "workflows": {
+    "log_transaction": [
+      "Validate inputs",
+      "Timestamp entry",
+      "Categorize automatically using rules",
+      "Append to local storage ledger",
+      "Return confirmation + updated summary"
+    ],
+    "generate_summary": [
+      "Aggregate all entries",
+      "Group by income vs expense",
+      "Group by category",
+      "Group by month and quarter",
+      "Return tax-ready summary block"
+    ],
+    "export_data": [
+      "Convert ledger to CSV",
+      "Convert ledger to JSON",
+      "Trigger download"
+    ]
+  },
+
+  "ui": {
+    "theme": "premium-dark",
+    "accent_color": "#FF3B30",
+    "layout": "mobile-first",
+    "components": [
+      "transaction form",
+      "ledger table",
+      "summary cards",
+      "export buttons"
+    ]
+  }
+}
