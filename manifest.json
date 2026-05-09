@@ -1,0 +1,19 @@
+{
+  "name": "Ex'ample OS",
+  "short_name": "Ex'ample",
+  "description": "A fully mobile-first, offline-first, agent‑run OS.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "branding/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
