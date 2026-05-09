@@ -1,0 +1,15 @@
+{
+  "name": "Content Generator Agent",
+  "description": "Creates structured content on demand.",
+  "inputs": {
+    "topic": { "type": "text", "placeholder": "Topic" },
+    "style": { "type": "text", "placeholder": "Tone or style" }
+  },
+  "outputs": {
+    "content": "Generated content block."
+  },
+  "workflows": {
+    "generate": ["Read inputs", "Create content", "Return formatted block"]
+  },
+  "ui": { "theme": "dark" }
+}
