@@ -1,0 +1,14 @@
+{
+  "name": "Basic Agent",
+  "description": "A simple starter agent template.",
+  "inputs": {
+    "goal": { "type": "text", "placeholder": "What should this agent do?" }
+  },
+  "outputs": {
+    "summary": "A simple agent definition."
+  },
+  "workflows": {
+    "run": ["Interpret goal", "Generate output", "Return summary"]
+  },
+  "ui": { "theme": "light" }
+}
